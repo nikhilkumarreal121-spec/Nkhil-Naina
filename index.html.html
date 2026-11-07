@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our Wedding – Venues &amp; Contacts</title>
+<style>
+:root{--bg:#f5f0de;--card:#fffdf5;--ink:#1d3626;--mut:#6a7a5c;--acc:#1e5b3a;--acc2:#c29a2f;--line:#e2d4a3;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10201a;--card:#183027;--ink:#f1ead2;--mut:#b3bf9f;--acc:#7fcf9f;--acc2:#e0bb54;--line:#2f4a3b;--on:#0f2419;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10201a;--card:#183027;--ink:#f1ead2;--mut:#b3bf9f;--acc:#7fcf9f;--acc2:#e0bb54;--line:#2f4a3b;--on:#0f2419;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Georgia,'Times New Roman',serif}
+main{max-width:480px;margin:0 auto;padding:28px 18px 40px}
+header{text-align:center;margin-bottom:22px}
+.orn{color:var(--acc2);letter-spacing:.08em;font-size:15px}
+h1{font-size:30px;margin:8px 0 4px;color:var(--acc);font-weight:normal}
+.sub{color:var(--mut);font-size:15px}
+.tabs{display:flex;gap:8px;margin:18px 0}
+.tab{flex:1;padding:12px 8px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;font:inherit;font-size:15px;cursor:pointer;text-align:center}
+.tab small{display:block;color:var(--mut);font-size:12px}
+.tab[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.tab[aria-selected="true"] small{color:var(--on);opacity:.8}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{padding:7px 12px;border-radius:99px;border:1px solid var(--acc);background:transparent;color:var(--acc);font:inherit;font-size:14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--acc);color:var(--on)}
+h2{margin:0 0 4px;font-size:22px;font-weight:normal}
+.meta{color:var(--mut);font-size:15px;margin:2px 0}
+.btn{display:inline-block;margin-top:12px;padding:11px 16px;border-radius:12px;background:var(--acc);color:var(--on);text-decoration:none;font-size:15px}
+.btn.alt{background:transparent;color:var(--acc);border:1px solid var(--acc);margin-left:6px}
+h3{margin:22px 0 10px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--mut);font-weight:normal}
+.ct{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.ct b{font-weight:normal;font-size:17px}
+.ct span{color:var(--mut);font-size:14px;display:block}
+.ct a{font-size:14px;color:var(--acc);text-decoration:none;border:1px solid var(--line);padding:7px 11px;border-radius:10px;margin-left:4px}
+.day{margin-top:14px;font-size:14px;color:var(--acc);border-bottom:1px solid var(--line);padding-bottom:4px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;font-size:15px}.row span:last-child{color:var(--mut);white-space:nowrap}
+footer{text-align:center;color:var(--mut);font-size:14px;margin-top:26px}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="orn">॥ श्री गणेशाय नमः ॥</div>
+  <h1 id="title">Our Wedding</h1>
+  <div class="sub">Join us in celebrating – tap an event to see the venue</div>
+</header>
+
+<div class="tabs" role="tablist" id="tabs"></div>
+<div id="venues"></div>
+
+<h3>Contact</h3>
+<div id="contacts"></div>
+
+<footer>R.S.V.P.: All Khitoliya Family<br>We can’t wait to celebrate with you ♥</footer>
+</main>
+
+<script>
+/* ====== EDIT YOUR DETAILS HERE ====== */
+var CONFIG = {
+  title: "Nikhil weds Naina",
+  events: [
+    { id:"barat", name:"Wedding & Barat", short:"2 Dec 2026", date:"Wednesday, 2 December 2026",
+      venues:[
+        { name:"Wedding Venue", time:"Ghurchadi 4:00 PM · Barat departs 5:00 PM", address:"In front of Chameli Park, Beside Safal Dairy, Ramdev Baba Park, Raghubir Nagar, New Delhi-110027", map:"Chameli Park, Ramdev Baba Park, Raghubir Nagar, New Delhi 110027" },
+        { name:"Barat departs from (residence)", time:"Departure of Barat: 5:00 PM", address:"18A, Duggal Housing Complex, Khanpur, Delhi-110062", map:"18A Duggal Housing Complex, Khanpur, New Delhi 110062" }
+      ],
+      schedule:[
+        { d:"Thursday, 26 November 2026", items:[["Sidha Hath (Baan)","5:00 PM"]] },
+        { d:"Saturday, 28 November 2026", items:[["Haldi","11:00 AM"],["Tel","6:00 PM"]] },
+        { d:"Sunday, 29 November 2026", items:[["Chaak Poojan","5:00 PM"],["Bhaat","7:00 PM"]] },
+        { d:"Wednesday, 2 December 2026", items:[["Ghurchadi","4:00 PM"],["Departure of Barat","5:00 PM"]] }
+      ]},
+    { id:"reception", name:"Reception", short:"6 Dec 2026", date:"Sunday, 6 December 2026",
+      venues:[
+        { name:"Dipsaar Park", time:"Dinner: 7:00 PM", address:"Near Center School, Sector-3, Pushp Vihar, New Delhi-110017", map:"28.518459,77.222931" }
+      ]}
+  ],
+  contacts:[
+    { name:"Rajan Khitoliya", role:"Family", phone:"+918700716795" },
+    { name:"Ganga Ram Sahariya", role:"Family", phone:"+919990441246" },
+    { name:"Harsh Khitoliya", role:"Family", phone:"+919654323363" },
+    { name:"Ajay Khitoliya", role:"Family", phone:"+918368633533" }
+  ]
+};
+/* ===================================== */
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function sched(e){
+  if(!e.schedule)return "";
+  var h='<div class="card"><h2>Programme</h2>';
+  e.schedule.forEach(function(g){
+    h+='<div class="day">'+esc(g.d)+'</div>';
+    g.items.forEach(function(i){h+='<div class="row"><span>'+esc(i[0])+'</span><span>'+esc(i[1])+'</span></div>'});
+  });
+  return h+'</div>';
+}
+var state={ev:0,v:0};
+var tabsEl=document.getElementById("tabs"),venEl=document.getElementById("venues");
+document.getElementById("title").textContent=CONFIG.title;
+document.title=CONFIG.title+" – Venues & Contacts";
+
+function render(){
+  var tabs="";
+  CONFIG.events.forEach(function(e,i){
+    tabs+='<button class="tab" role="tab" data-i="'+i+'" aria-selected="'+(i===state.ev)+'">'+esc(e.name)+'<small>'+esc(e.short)+'</small></button>';
+  });
+  tabsEl.innerHTML=tabs;
+  var e=CONFIG.events[state.ev],chips="";
+  if(e.venues.length>1){
+    chips='<div class="chips">';
+    e.venues.forEach(function(v,i){chips+='<button class="chip" data-v="'+i+'" aria-pressed="'+(i===state.v)+'">'+esc(v.name)+'</button>'});
+    chips+='</div>';
+  }
+  var v=e.venues[state.v]||e.venues[0];
+  var q=encodeURIComponent(v.map||v.address);
+  venEl.innerHTML='<div class="card">'+chips+
+    '<h2>'+esc(v.name)+'</h2>'+
+    '<p class="meta">📅 '+esc(e.date)+'</p>'+
+    (v.time?'<p class="meta">🕖 '+esc(v.time)+'</p>':'')+
+    '<p class="meta">📍 '+esc(v.address)+'</p>'+
+    '<a class="btn" href="https://www.google.com/maps/search/?api=1&query='+q+'">Open in Maps</a>'+
+    '<a class="btn alt" href="https://www.google.com/maps/dir/?api=1&destination='+q+'">Get Directions</a></div>'+sched(e);
+}
+tabsEl.addEventListener("click",function(ev){
+  var b=ev.target.closest(".tab");if(!b)return;
+  state.ev=+b.dataset.i;state.v=0;render();
+  try{history.replaceState(null,"","#"+CONFIG.events[state.ev].id)}catch(x){}
+});
+venEl.addEventListener("click",function(ev){
+  var b=ev.target.closest(".chip");if(!b)return;
+  state.v=+b.dataset.v;render();
+});
+function fromHash(){
+  var h=(location.hash||"").slice(1);
+  CONFIG.events.forEach(function(e,i){if(e.id===h){state.ev=i;state.v=0}});
+}
+window.addEventListener("hashchange",function(){fromHash();render()});
+fromHash();render();
+
+var c="";
+CONFIG.contacts.forEach(function(p){
+  var d=p.phone.replace(/[^\d+]/g,""),w=d.replace(/\D/g,"");
+  c+='<div class="card ct"><div><b>'+esc(p.name)+'</b><span>'+esc(p.role)+' · '+esc(p.phone)+'</span></div>'+
+     '<div><a href="tel:'+d+'">Call</a><a href="https://wa.me/'+w+'">WhatsApp</a></div></div>';
+});
+document.getElementById("contacts").innerHTML=c;
+</script>
+</body>
+</html>
